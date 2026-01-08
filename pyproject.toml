@@ -1,27 +1,27 @@
 [project]
-name = "repo-template-python"
-version = "0.1.0"
-description = ""
+name = 'repo-template-python'
+version = '0.1.0'
+description = ''
 authors = [
-    {name = "Gabriel Dornas",email = "gabrielbdornas@gmail.com"}
+    {name = 'Gabriel Dornas',email = 'gabrielbdornas@gmail.com'}
 ]
-readme = "README.md"
-requires-python = ">=3.13,<4.0"
+readme = 'README.md'
+requires-python = '>=3.13,<4.0'
 dependencies = [
-    "taskipy (>=1.14.1,<2.0.0)"
+    'taskipy (>=1.14.1,<2.0.0)'
 ]
 
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ['poetry-core>=2.0.0,<3.0.0']
+build-backend = 'poetry.core.masonry.api'
 
 [dependency-groups]
 dev = [
-    "ipdb (>=0.13.13,<0.14.0)",
-    "pytest (>=9.0.2,<10.0.0)",
-    "pytest-cov (>=7.0.0,<8.0.0)",
-    "ruff (>=0.14.10,<0.15.0)"
+    'ipdb (>=0.13.13,<0.14.0)',
+    'pytest (>=9.0.2,<10.0.0)',
+    'pytest-cov (>=7.0.0,<8.0.0)',
+    'ruff (>=0.14.10,<0.15.0)'
 ]
 
 [tool.ruff]
@@ -36,15 +36,15 @@ preview = true
 quote-style = 'single'
 
 [tool.pytest.ini_options]
-pythonpath = "."
+pythonpath = '.'
 addopts = '-p no:warnings'
 
 
 [tool.taskipy.tasks]
-list = { cmd = "task --list", help = "Lists all tasks." }
-lint = { cmd = 'ruff check', help = "Checks for good coding practices in Python." }
-pre_format = { cmd = 'ruff check --fix', help = "Makes some best practice corrections." }
-format = { cmd = 'ruff format', help = "Formats code according to code style conventions." }
-pre_test = { cmd = 'task lint', help = "Runs linters before running the tests." }
-test = { cmd = "pytest -s -x -vv", help = "Runs unit tests." }
-post_test = { cmd = 'coverage html', help = "Generates a coverage report after the tests." }
+list = { cmd = 'task --list', help = 'Lists all tasks.' }
+lint = { cmd = 'ruff check', help = 'Checks for good coding practices in Python.' }
+pre_format = { cmd = 'ruff check --fix', help = 'Makes some best practice corrections.' }
+format = { cmd = 'ruff format', help = 'Formats code according to code style conventions.' }
+pre_test = { cmd = 'task lint', help = 'Runs linters before running the tests.' }
+test = { cmd = 'pytest -s -x -vv', help = 'Runs unit tests.' }
+post_test = { cmd = 'coverage html', help = 'Generates a coverage report after the tests.' }
