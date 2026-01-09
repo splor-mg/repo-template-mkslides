@@ -29,6 +29,7 @@ jobs:
           python - <<'EOF'
           import tomllib
           from pathlib import Path
+          import os
 
           data = tomllib.loads(Path("pyproject.toml").read_text())
 
@@ -42,9 +43,12 @@ jobs:
 
           has_upstream = bool(upstream)
 
-          print(f"has_upstream={str(has_upstream).lower()}")
-          if has_upstream:
-              print(f"upstream={upstream}")
+          github_output = os.environ["GITHUB_OUTPUT"]
+
+          with open(github_output, "a") as f:
+              f.write(f"has_upstream={str(has_upstream).lower()}\n")
+              if has_upstream:
+                  f.write(f"upstream={upstream}\n")
           EOF
 
       - name: Check for upstream changes
