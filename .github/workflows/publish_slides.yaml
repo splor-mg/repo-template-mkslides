@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   publish_slides:
@@ -18,8 +16,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -52,3 +48,10 @@ jobs:
           poetry run task build
           rm -rf site/mkslides-assets/reveal-js/.git
           poetry run task gh-pages -m "$COMMIT_MESSAGE"
+      - name: Workflow failure notification
+        uses: JasonEtco/create-an-issue@v2
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          filename: .github/publish_slides_failure.md
