@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        
+
+        <link rel="stylesheet" href="mkslides-assets/reveal-js/dist/reveal.css" />
+
+        
+            <link rel="stylesheet" href="mkslides-assets/reveal-js/dist/theme/solarized.css" />
+        
+        
+            <link rel="stylesheet" href="mkslides-assets/highlight-js-themes/monokai.css" />
+        
+
+        
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                
+                    data-separator="<!--s-->"
+                
+                    data-separator-vertical="<!--v-->"
+                
+                    data-separator-notes="^Notes?:"
+                
+                    data-charset="utf-8"
+                
+                >
+                    <!-- The markdown must be placed to the whole left to prevent indentation issues like https://github.com/MartenBE/mkslides/issues/52 -->
+                    <textarea data-template>
+# Mkslides Template
+
+And [reveal.js](https://revealjs.com/)
+
+<!--s-->
+
+## Slide 1
+
+This is the Slide 1 example.
+
+<!--s-->
+
+## Slide 2
+
+This is the Slide 2 example.
+
+<!--v-->
+
+## Slide 2.1
+
+This is the Slide 2.1 example.
+
+<!--v-->
+
+## Slide 2.2
+
+This is the Slide 2.2 example, with notes (press `s`).
+
+Notes:
+- Note 1.
+- Note 2.
+                    </textarea>
+                </section>
+            </div>
+        </div>
+        <script src="mkslides-assets/reveal-js/dist/reveal.js"></script>
+        <script src="mkslides-assets/reveal-js/plugin/highlight/highlight.js"></script>
+        <script src="mkslides-assets/reveal-js/plugin/markdown/markdown.js"></script>
+        <script src="mkslides-assets/reveal-js/plugin/math/math.js"></script>
+        <script src="mkslides-assets/reveal-js/plugin/notes/notes.js"></script>
+        <script src="mkslides-assets/reveal-js/plugin/search/search.js"></script>
+        <script src="mkslides-assets/reveal-js/plugin/zoom/zoom.js"></script>
+
+        
+
+        <script>
+            Reveal.initialize({
+                
+                    
+                        history: true,
+                    
+                        slideNumber: "c/t",
+                    
+                
+                plugins: [
+                    RevealMarkdown, // Must come before the other plugins so they can hook into the generated HTML.
+                    RevealHighlight,
+                    RevealMath.KaTeX,
+                    RevealNotes,
+                    RevealSearch,
+                    RevealZoom,
+
+                    
+                ],
+            });
+        </script>
+    </body>
+</html>
